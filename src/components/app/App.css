@@ -1,0 +1,16 @@
+.App {
+  padding: 10px;
+
+  text-align: center;
+  height: 90vh;
+  overflow: none;
+  display: grid;
+
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 1fr 10fr;
+  grid-gap: 10px;
+
+  grid-template-areas:
+    'l h'
+    'l m';
+}

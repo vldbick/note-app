@@ -1,0 +1,10 @@
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.cards::-webkit-scrollbar {
+  width: 0;
+}
