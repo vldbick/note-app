@@ -1,0 +1,16 @@
+.tools img {
+    width: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.tools img:hover {
+    scale: 1.1;
+}

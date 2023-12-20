@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import Header from '../header/Header';
+import React from 'react';
+
 import './App.css';
-import Main from '../main/Main';
-import LeftMenu from '../leftMenu/LeftMenu';
+import General from '../general/General';
+import RightMenu from '../rightMenu/RightMenu';
+import Summary from '../summaryTable/Summary';
+
 
 function App() {
 
   return (
     <div className="App">
-      <Header></Header>
-      <LeftMenu></LeftMenu>
-      <Main></Main>
+      <General></General>
+      <RightMenu></RightMenu>
+      <Summary></Summary>
     </div>
   );
 }

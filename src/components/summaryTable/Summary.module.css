@@ -1,0 +1,4 @@
+.summary {
+    grid-area: s;
+    border: 2px solid black;
+}

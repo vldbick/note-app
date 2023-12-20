@@ -2,15 +2,16 @@
   padding: 10px;
 
   text-align: center;
-  height: 90vh;
+  height: 100vh;
   overflow: none;
   display: grid;
 
-  grid-template-rows: 80px 1fr;
-  grid-template-columns: 1fr 10fr;
-  grid-gap: 10px;
+
+  grid-template-rows: 5fr 3fr;
+  grid-template-columns: 10fr 4fr;
+  grid-gap: 5px;
 
   grid-template-areas:
-    'l h'
-    'l m';
+    'g r'
+    's r';
 }
