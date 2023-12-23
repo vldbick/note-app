@@ -12,7 +12,7 @@ class Note {
     }
 
     findDatesInString(inputString) {
-        const dateRegex = /\d{2}\/\d{2}\/\d{4}/;
+        const dateRegex = /\b\d{1,2}([\/\.-])\d{1,2}\1\d{2,4}\b/g;
         const matches = inputString.match(dateRegex);
 
         return matches || [];

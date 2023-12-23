@@ -37,16 +37,26 @@ function deleteObjectById(arr, id) {
 function editNoteInArray(arr, id, { title, category, content }) {
     debugger
     const indexToRemove = arr.findIndex(item => item.id === +id);
-    console.log(indexToRemove);
+
     if (indexToRemove !== -1) {
-        const target = arr.map((item, index) =>
-            index === indexToRemove
-                ? { ...item, title, category, content }
-                : item
-        );
+        const target = arr.map((item, index) => {
+            const dates = findDatesInString(content);
+
+            return index === indexToRemove
+                ? { ...item, title, category, content, dates }
+                : item;
+        });
+
         return target;
     }
     return arr;
+}
+
+function findDatesInString(inputString) {
+    const dateRegex = /\b\d{1,2}([\/\.-])\d{1,2}\1\d{2,4}\b/g;
+    const matches = inputString.match(dateRegex);
+
+    return matches || [];
 }
 
 

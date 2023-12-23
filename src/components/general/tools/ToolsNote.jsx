@@ -10,6 +10,7 @@ const ToolsNote = ({ note, targetArray }) => {
 
     const deleteNote = (id) => {
         dispatch({ type: "DELETE_NOTE", payload: id })
+        navigate(`edit`);
     }
 
     const archiveNote = (id) => {

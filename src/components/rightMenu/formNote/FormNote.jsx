@@ -16,17 +16,21 @@ const FormNote = () => {
         category: '',
         content: ''
     }), []);
-    
+
     const [formData, setFormData] = useState(defaultFormData);
 
     useEffect(() => {
-        if (currentPath.includes('edit')) {
-            const currentNote = general[id];
-            setFormData({
-                title: currentNote.title,
-                category: currentNote.category,
-                content: currentNote.content
-            });
+        debugger
+        if (currentPath.includes(`edit`)) {
+            const ind = general.findIndex(item => item.id === +id);
+            if (ind !== -1) {
+                const currentNote = general[ind];
+                setFormData({
+                    title: currentNote.title,
+                    category: currentNote.category,
+                    content: currentNote.content
+                });
+            }
         }
         if (currentPath.includes('add-new')) {
             setFormData(defaultFormData);

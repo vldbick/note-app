@@ -22,9 +22,9 @@ const General = () => {
                     <Routes>
                         <Route path="/" element={<ActiveNotes></ActiveNotes>}>
                         </Route>
-                        <Route path="general*" element={<ActiveNotes></ActiveNotes>}>
+                        <Route path="general/*" element={<ActiveNotes></ActiveNotes>}>
                         </Route>
-                        <Route  path="archive*" element={<ArchiveNotes></ArchiveNotes>}>
+                        <Route  path="archive/*" element={<ArchiveNotes></ArchiveNotes>}>
                         </Route>
                     </Routes>
                 </div>
