@@ -2,3 +2,10 @@
     grid-area: r;
     border: 2px solid black;
 }
+
+.buttons {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+}

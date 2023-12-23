@@ -4,19 +4,19 @@
     justify-content: space-around;
     align-items: center;
     padding: 10px 0;
-    min-height: 80px;
+    min-height: 50px;
 }
 
 .tableNote div {
-    flex-basis: 15%;
+    flex-basis: 20%;
 }
 
 .tableNote:nth-child(odd) {
     background-color: rgba(255, 228, 196, 0.847);
 }
 
-.tableNote .contentData {
-    flex-basis: 30%;
+.tableNote .titleNote {
+    flex-basis: 40%;
     text-align: left;
 }
 

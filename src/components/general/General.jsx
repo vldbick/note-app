@@ -1,11 +1,10 @@
 import React from 'react'
 import s from './General.module.css';
-import { useSelector } from 'react-redux';
-import Note from './note/Note';
+import { Route, Routes } from 'react-router-dom';
+import ActiveNotes from './activeNotes/ActiveNotes';
+import ArchiveNotes from './archiveNotes/ArchiveNotes';
 
 const General = () => {
-    const general = useSelector(state => state.general);
-
 
     return (
         <div className={s.main}>
@@ -20,9 +19,14 @@ const General = () => {
                     <div>Tools</div>
                 </div>
                 <div className={s.tableBody}>
-                    {general.map((el) => {
-                        return <Note key={el.id} obj={el}></Note>
-                    })}
+                    <Routes>
+                        <Route path="/" element={<ActiveNotes></ActiveNotes>}>
+                        </Route>
+                        <Route path="general*" element={<ActiveNotes></ActiveNotes>}>
+                        </Route>
+                        <Route  path="archive*" element={<ArchiveNotes></ArchiveNotes>}>
+                        </Route>
+                    </Routes>
                 </div>
 
 
