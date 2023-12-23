@@ -22,16 +22,27 @@ const ToolsNote = ({ note, targetArray }) => {
 
 
 
-    const editNote = (tar, id) => {
+    const editNote = (id) => {
         navigate(`edit/${id}`);
-        console.log(tar);
     }
 
     return (
         <div className={s.tools}>
-            <div onClick={() => { editNote(targetArray, note.id) }}><img src="/img/edit.png" alt="" /></div>
-            <div onClick={targetArray === 'archive' ? () => removeNote(note.id) : () => archiveNote(note.id)}><img src="/img/archive.png" alt="" /></div>
-            <div onClick={() => deleteNote({ id: note.id, target: targetArray })}><img src="/img/delete.png" alt="" /></div>
+            {
+                targetArray === 'archive' ?
+                    <>
+                        <div></div>
+                        <div onClick={() => removeNote(note.id)}><img src="/img/refresh.png" alt="" /></div>
+                        <div onClick={() => deleteNote({ id: note.id, target: targetArray })}><img src="/img/delete.png" alt="" /></div>
+                    </>
+                    :
+                    <>
+                        <div onClick={() => { editNote(note.id) }}><img src="/img/edit.png" alt="" /></div>
+                        <div onClick={targetArray === 'archive' ? () => removeNote(note.id) : () => archiveNote(note.id)}><img src="/img/archive.png" alt="" /></div>
+                        <div onClick={() => deleteNote({ id: note.id, target: targetArray })}><img src="/img/delete.png" alt="" /></div>
+                    </>
+
+            }
         </div>
     );
 }

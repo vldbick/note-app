@@ -34,6 +34,22 @@ function deleteObjectById(arr, id) {
     return arr;
 }
 
+function editNoteInArray(arr, id, { title, category, content }) {
+    debugger
+    const indexToRemove = arr.findIndex(item => item.id === +id);
+    console.log(indexToRemove);
+    if (indexToRemove !== -1) {
+        const target = arr.map((item, index) =>
+            index === indexToRemove
+                ? { ...item, title, category, content }
+                : item
+        );
+        return target;
+    }
+    return arr;
+}
+
+
 function moveObjBetweenArray(parent, target, id) {
     const indexToRemove = parent.findIndex(item => item.id === id);
 
@@ -48,14 +64,19 @@ function moveObjBetweenArray(parent, target, id) {
 export const notesReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "ADD_NOTE":
-            const { title, category, content } = action.payload;
-            const newNote = new Note(title, category, content)
-            return { ...state, general: [...state.general, newNote] }
+            return { ...state, general: [...state.general, action.payload] }
         case "ARCHIVE_NOTE":
             return { ...state, archive: moveObjBetweenArray([...state.general], [...state.archive], action.payload), general: deleteObjectById([...state.general], action.payload) };
-
         case "EDIT_NOTE":
-            return state;
+            console.log(action.payload.id);
+            return {
+                ...state,
+                general: editNoteInArray([...state.general], action.payload.id, {
+                    title: action.payload.title,
+                    category: action.payload.category,
+                    content: action.payload.content
+                })
+            };
         case "DELETE_NOTE":
             if (action.payload.target === 'general') {
                 return { ...state, general: deleteObjectById([...state.general], action.payload.id) };

@@ -1,10 +1,11 @@
 .tableNote {
     display: flex;
+    gap: 5px;
     width: 100%;
     justify-content: space-around;
     align-items: center;
     padding: 10px 0;
-    min-height: 80px;
+    min-height: 50px;
 }
 
 .tableNote div {
@@ -21,7 +22,7 @@
 }
 
 .imgNote {
-    padding: 0 10px;
+    padding-left:10px ;
 }
 
 .imgNote img {
