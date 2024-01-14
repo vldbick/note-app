@@ -13,8 +13,8 @@ const AddNote = () => {
                 newPath = `general/add-new`
             } else if (currentPath.includes('archive')) {
                 newPath = `archive/add-new`
-            } else {
-                newPath =  `/add-new`
+            } else if (currentPath.includes('note-app')) {
+                newPath = `note-app/add-new`
             }
             navigate(newPath);
         }
