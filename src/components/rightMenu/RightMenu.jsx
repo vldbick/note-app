@@ -18,6 +18,7 @@ const RightMenu = () => {
                     <Route path='general/add-new' element={<FormNote />} />
                     <Route path='general/edit/:id' element={<FormNote />} />
                     <Route path='archive/edit/:id' element={<FormNote />} />
+                    <Route path='note-app/edit/:id' element={<FormNote />} />
                 </Routes>
             </div>
         </div>

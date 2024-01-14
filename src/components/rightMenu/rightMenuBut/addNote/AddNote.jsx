@@ -11,7 +11,8 @@ const AddNote = () => {
         if (!currentPath.includes('add-new')) {
             if (currentPath.includes('general')) {
                 newPath = `general/add-new`
-            } else {
+            } 
+            if (currentPath.includes('archive')) {
                 newPath = `archive/add-new`
             }
             navigate(newPath);
