@@ -2,9 +2,9 @@ import React from 'react'
 import s from './SummaryNote.module.css'
 import { useSelector } from 'react-redux';
 
-const taskImg = '/img/task.png';
-const ideaImg = '/img/idea.png';
-const thoughtImg = '/img/personalThought.png'
+const taskImg = '/note-app/img/task.png';
+const ideaImg = '/note-app/img/idea.png';
+const thoughtImg = '/note-app/img/personalThought.png'
 
 function chooseImg(category) {
     let src;
@@ -15,7 +15,7 @@ function chooseImg(category) {
         src = ideaImg;
     } else if (cat === 'thought') {
         src = thoughtImg;
-    } 
+    }
     return <img src={src} alt="" />
 }
 

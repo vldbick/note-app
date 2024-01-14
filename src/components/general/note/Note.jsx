@@ -2,9 +2,9 @@ import React from 'react'
 import s from './Note.module.css'
 import ToolsNote from '../tools/ToolsNote';
 
-const taskImg = '/img/task.png';
-const ideaImg = '/img/idea.png';
-const thoughtImg = '/img/personalThought.png'
+const taskImg = '/note-app/img/task.png';
+const ideaImg = '/note-app/img/idea.png';
+const thoughtImg = '/note-app/img/personalThought.png'
 
 function chooseImg(category) {
     let src;

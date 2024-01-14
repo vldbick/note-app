@@ -20,7 +20,7 @@ const General = () => {
                 </div>
                 <div className={s.tableBody}>
                     <Routes>
-                        <Route path="/" element={<ActiveNotes></ActiveNotes>}>
+                        <Route path="note-app/*" element={<ActiveNotes></ActiveNotes>}>
                         </Route>
                         <Route path="general/*" element={<ActiveNotes></ActiveNotes>}>
                         </Route>
