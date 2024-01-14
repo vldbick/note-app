@@ -74,7 +74,7 @@ function moveObjBetweenArray(parent, target, id) {
 export const notesReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "ADD_NOTE":
-            return { ...state, general: [...state.general, action.payload] }
+            return { ...state, general: [action.payload, ...state.general] }
         case "ARCHIVE_NOTE":
             return { ...state, archive: moveObjBetweenArray([...state.general], [...state.archive], action.payload), general: deleteObjectById([...state.general], action.payload) };
         case "EDIT_NOTE":
